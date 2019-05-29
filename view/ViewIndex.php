@@ -2,7 +2,6 @@
   class ViewIndex extends View {
 
     private $content;
-    private $baliseTitle;
 
     public function __construct($content) {
       $this->initRecordViewData($content);
