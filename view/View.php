@@ -3,9 +3,11 @@
   class View {
 
     protected $htmlElement;
+    private $title;
 
     public function __construct() {
       $this->htmlElement = '';
+      $this->title = '';
     }
 
     public function getHtmlElement() {
@@ -40,6 +42,10 @@
       }
       $this->htmlElement .= '</ul>';
       $this->htmlElement .= '</nav>';
+    }
+
+    public function setTitle($title) {
+        $this->title = $title;
     }
 
     public function buildPage() {
