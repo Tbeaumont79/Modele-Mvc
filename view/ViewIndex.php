@@ -23,7 +23,6 @@
 
     public function initRecordViewData($content) {
       $this->content = $content;
-      $this->baliseTitle = '';
     }
   }
 ?>
