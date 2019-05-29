@@ -26,6 +26,5 @@
       $this->setPassword($password);
       $this->setEmail($email);
     }
-
   }
  ?>

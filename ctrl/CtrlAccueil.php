@@ -1,7 +1,6 @@
 <?php
   class CtrlAccueil extends Ctrl{
 
-
     public function __construct() {
 
     }
