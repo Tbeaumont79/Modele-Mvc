@@ -40,7 +40,5 @@
       $this->setUsername($username);
       $this->setPassword($password);
     }
-
   }
-
  ?>
