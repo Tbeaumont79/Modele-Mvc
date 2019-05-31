@@ -50,16 +50,12 @@
        $this->dataArray = $this->pdoStatement->fetch(PDO::FETCH_ASSOC);
      }
 
-     public function pdoPrepare() {
-       $this->pdo->prepare($this->sql);
-     }
-
      public function getErrorMsg($errorMsg) {
        return $this->errorMsg;
      }
 
-     public function getSql() {
-       return $this->sql;
+     public function getDataArray() {
+       return $this->dataArray;
      }
 
      public function getSuccesMsg($succesMsg) {

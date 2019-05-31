@@ -32,8 +32,8 @@
     public function buildMenuPage() {
       $menuArray = [
         'index.php' => 'Accueil',
-        'about.php' => 'About',
-        'contact.php' => 'Contact'
+        'signIn.php' => 'Sign In',
+        'signUp.php' => 'Sign Up'
       ];
       $this->htmlElement .= '<nav>';
       $this->htmlElement .= '<ul>';

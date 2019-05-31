@@ -23,16 +23,16 @@
       return $this->pdo;
     }
 
+    public function setPassword($password) {
+      $this->password = $password;
+    }
+    
     public function pdoConnection() {
       try {
         $this->pdo = new PDO($dsn, $user, $password);
       } catch (PDOException $e) {
         echo 'Connexion échouée : ' . $e->getMessage();
       }
-    }
-
-    public function setPassword($password) {
-      $this->password = $password;
     }
 
     public function initConnectionDataBdd($dsn, $username, $password) {

@@ -5,7 +5,7 @@
     private $password;
     private $email;
 
-    public function __construct($username, $password, $email) {
+    public function __construct($username, $password, $email = null) {
       $this->initRecordUserData($username, $password, $email);
     }
 
@@ -21,7 +21,7 @@
       $this->email = $email;
     }
 
-    public function initRecordUserData($username, $password, $email) {
+    public function initRecordUserData($username, $password, $email = null) {
       $this->setUsername($username);
       $this->setPassword($password);
       $this->setEmail($email);

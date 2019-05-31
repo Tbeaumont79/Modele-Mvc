@@ -2,13 +2,15 @@
   class ViewIndex extends View {
 
     private $content;
+    private $baliseH1;
 
     public function __construct($content) {
       $this->initRecordViewData($content);
+      $this->$baliseH1 = '';
     }
 
-    public function setBaliseTitle($baliseTitle) {
-      $this->$baliseTitle = $baliseTitle;
+    public function setBaliseH1($baliseH1) {
+      $this->$baliseH1 = $baliseH1;
     }
 
     public function buildContentPage() {
