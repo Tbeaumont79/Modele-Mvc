@@ -10,7 +10,6 @@
     }
 
     public function start() {
-
       if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = filter_var($_POST['username'],FILTER_SANITIZE_STRING);
         $password = filter_var($_POST['password'],FILTER_SANITIZE_STRING);
@@ -19,11 +18,13 @@
         $this->content = $this->actionLogin->getMsg();
       } else {
         $form = new ViewLoginForm();
-        $form->createForm();
+        $form->createView();
         $this->content = $form->getHtmlElement();
       }
       $this->view = new ViewSignIn($this->content);
       $this->setViewData('sign In', 'sign In');
+      $this->view->buildPage();
+
     }
   }
  ?>

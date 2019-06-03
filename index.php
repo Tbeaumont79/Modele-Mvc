@@ -7,5 +7,4 @@
   $ctrl = new CtrlAccueil();
   $ctrl->start();
   echo $ctrl->getView();
-
  ?>

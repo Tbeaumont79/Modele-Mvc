@@ -12,7 +12,7 @@
       return $this->htmlElement;
     }
 
-    public function createForm() {
+    public function createView() {
       $this->htmlElement .= '<form class="formulaire" action="#" method="POST">';
       $this->htmlElement .= '<p>username</p><input type="text" name="username" value="">';
       $this->htmlElement .= '<p>password</p><input type="password" name="password" value="">';
