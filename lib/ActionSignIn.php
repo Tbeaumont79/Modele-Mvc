@@ -13,10 +13,10 @@
 
     public function __construct($username, $password) {
       //record new RecordUserData ect ..
-      $this->record = new RecordUserData();
+      $this->record = new RecordUserData($username, $password);
       $this->linkToBdd = new ConnectToBdd();
-      $this->linkToBdd->pdoConnection();
-      $this->sqlStatementLogin = new SqlStatementSignIn($this->linkToBdd, $this->record);
+      $this->linkToBdd->connectToBdd();
+      $this->sqlStatementLogin = new SqlStatementActionSignIn($this->linkToBdd, $this->record);
       $this->succesMsg = '';
       $this->errorMsg = '';
       $this->msg = '';

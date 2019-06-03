@@ -7,8 +7,8 @@
       $this->succesMsg = 'You are logged';
     }
 
-    public function bindParam($username) {
-      $this->pdoStatement->bindParam(':username',$username);
+    public function bindParam() {
+      $this->pdoStatement->bindParam(':username',$this->record->getUsername());
     }
     public function getSql() {
       return $this->sql;

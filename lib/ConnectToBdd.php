@@ -26,8 +26,8 @@
     public function setPassword($password) {
       $this->password = $password;
     }
-    
-    public function pdoConnection() {
+
+    public function connectToBdd() {
       try {
         $this->pdo = new PDO($dsn, $user, $password);
       } catch (PDOException $e) {

@@ -24,7 +24,6 @@
       $this->view = new ViewSignIn($this->content);
       $this->setViewData('sign In', 'sign In');
       $this->view->buildPage();
-
     }
   }
  ?>
