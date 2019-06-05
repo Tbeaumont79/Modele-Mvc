@@ -4,6 +4,7 @@
   require_once('view/View.php');
   require_once('view/ViewSignUp.php');
   require_once('view/ViewFormSignUp.php');
+  require_once('model/RecordUserData.php');
   require_once('model/statement/Sqlstatement.php');
   require_once('model/statement/SqlStatementActionCheckBeforeRegister.php');
   require_once('model/statement/SqlStatementActionSignUp.php');

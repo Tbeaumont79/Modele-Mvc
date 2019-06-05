@@ -22,6 +22,7 @@
        $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
        $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
        // and call ActionRegister avec valeur de formulaire.
+
        $this->actionRegister = new ActionSignUp($username, $password, $email);
        $this->actionRegister->signUp();
        $this->content = $this->actionRegister->getMsg();
