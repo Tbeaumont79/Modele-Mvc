@@ -1,5 +1,5 @@
 <?php
-  class SqlStatementSignIn extends SqlStatement {
+  class SqlStatementActionSignIn extends SqlStatement {
 
     public function __construct($linkToBdd, $record) {
       parent::__construct($linkToBdd,$record);
@@ -14,6 +14,4 @@
       return $this->sql;
     }
   }
-
-
  ?>

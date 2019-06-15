@@ -14,7 +14,7 @@
     public function setViewData($title, $baliseTitle = null) {
       $this->view->setTitle($title);
       if ($baliseTitle != null) {
-        $this->view->setBaliseH1($baliseTitle);
+        $this->view->setBaliseTitle($baliseTitle);
       }
     }
   }

@@ -2,15 +2,16 @@
 
    class SqlStatement
    {
-     protected $connectToBdd;
-     protected $sql;
-     protected $succesMsg;
-     protected $errorMsg;
-     protected $record;
-     protected $pdoStatement;
-     protected $dataArray;
-     protected $executeSuccess;
-     protected $rowCount;
+    protected $linkToBdd;
+    protected $record;
+    protected $pdo;
+    protected $pdoStatement;
+    protected $sql;
+    protected $dataArray;
+    protected $excuteSuccess;
+    protected $errorMsg;
+    protected $succesMsg;
+    protected $rowCount;
 
      public function __construct($linkToBdd, $record) {
        $this->linkToBdd = $linkToBdd;
@@ -58,8 +59,9 @@
        return $this->dataArray;
      }
 
-     public function getSuccesMsg($succesMsg) {
+     public function getSuccesMsg() {
        return $this->succesMsg;
      }
+
    }
  ?>

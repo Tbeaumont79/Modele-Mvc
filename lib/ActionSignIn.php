@@ -1,54 +1,55 @@
 <?php
   class ActionSignIn {
 
-    private $linkToBdd;
-    private $succesMsg;
-    private $errorMsg;
-    private $record;
-    private $sqlStatementLogin;
-    private $dataArray;
-    private $executeSuccess;
-    private $rowCount;
+    private $registerRecord;
+    private $connectToBdd;
+    private $sqlStatementActionLogin;
+    private $isActionSucces;
     private $msg;
+    private $rowCount;
+    private $data;
 
     public function __construct($username, $password) {
-      //record new RecordUserData ect ..
-      $this->record = new RecordUserData($username, $password);
-      $this->linkToBdd = new ConnectToBdd();
-      $this->linkToBdd->connectToBdd();
-      $this->sqlStatementLogin = new SqlStatementActionSignIn($this->linkToBdd, $this->record);
-      $this->succesMsg = '';
-      $this->errorMsg = '';
-      $this->msg = '';
+        $this->registerRecord = new RecordUserData($username, $password);
+        $this->connectToBdd = new ConnectToBdd();
+        $this->connectToBdd->connectToBdd();
+        $this->sqlStatementActionLogin = new SqlStatementActionSignIn($this->connectToBdd, $this->registerRecord);
+        $this->isActionSucces = false;
+        $this->msg = '';
+        $this->rowCount = null;
+        $this->data = [];
+    }
+
+    public function getData() {
+      return $this->data;
     }
 
     public function getMsg() {
       return $this->msg;
     }
 
-    public function getSuccesMsg() {
-      return $this->succesMsg;
-    }
-
-    public function getErrorMsg() {
-      return $this->errorMsg;
+    public function getActionResult() {
+      return $this->isActionSucces;
     }
 
     public function signIn() {
-
-        $this->sqlStatementLogin->prepare();
-        $this->sqlStatementLogin->bindparam();
-        $this->sqlStatementLogin->execute();
-        $this->rowCount = $this->sqlStatementLogin->getRowCount();
-        $this->isSucces = $this->sqlStatementLogin->getExecuteSuccess();
-
-        if ($this->isSucces && $this->rowCount > 0) {
-          $this->msg = "you are logged";
-        }
-        else {
-          $this->msg = "Invalid password or username";
+        $this->sqlStatementActionLogin->prepare();
+        $this->sqlStatementActionLogin->bindParam();
+        $this->sqlStatementActionLogin->execute();
+        $this->rowCount = $this->sqlStatementActionLogin->getRowCount();
+        $this->isActionSucces = $this->sqlStatementActionLogin->getExecuteSuccess();        // 6: si !ok msgErr
+        if ($this->isActionSucces &&  $this->rowCount > 0) {
+          $this->sqlStatementActionLogin->fetch();
+          $data = $this->sqlStatementActionLogin->getDataArray();
+          $passOk = password_verify($this->registerRecord->getPassword(), $data['password']);
+          if ($passOk){
+              $this->msg = $this->sqlStatementActionLogin->getSuccesMsg();
+            } else if (!$passOk) {
+              $this->msg = 'invalide username or password';
+            }
+          } else {
+            $this->msg = 'invalide username or password';
         }
     }
   }
-
- ?>
+?>

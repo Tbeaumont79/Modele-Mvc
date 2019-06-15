@@ -1,6 +1,7 @@
 <?php
   require_once('lib/ConnectToBdd.php');
   require_once('lib/ActionSignIn.php');
+  require_once('model/RecordUserData.php');
   require_once('view/View.php');
   require_once('view/ViewSignIn.php');
   require_once('view/ViewLoginForm.php');

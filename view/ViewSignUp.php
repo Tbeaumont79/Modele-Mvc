@@ -2,20 +2,20 @@
   class ViewSignUp extends View {
 
     private $content;
-    private $baliseH1;
+    private $baliseTitle;
 
     public function __construct($content) {
       $this->content = $content;
-      $this->baliseH1 = '';
+      $this->baliseTitle = '';
     }
 
-    public function setBaliseH1($baliseH1) {
-      $this->baliseH1 = $baliseH1;
+    public function setBaliseTitle($baliseTitle) {
+      $this->baliseTitle = $baliseTitle;
     }
 
     public function buildContentPage() {
       $this->htmlElement .= '<div id="page">';
-      $this->htmlElement .= '<h1>'.$this->baliseH1.'</h1>';
+      $this->htmlElement .= '<h1>'.$this->baliseTitle.'</h1>';
       $this->htmlElement .= ''.$this->content.'';
       $this->htmlElement .= '</div>';
     }
