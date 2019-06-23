@@ -31,9 +31,9 @@
 
     public function buildMenuPage() {
       $menuArray = [
-        'index.php' => 'Accueil',
-        'signIn.php' => 'Sign In',
-        'signUp.php' => 'Sign Up'
+        'index.php?page=index' => 'Accueil',
+        'index.php?page=signIn' => 'Sign In',
+        'index.php?page=signUp' => 'Sign Up'
       ];
       $this->htmlElement .= '<nav>';
       $this->htmlElement .= '<ul>';
