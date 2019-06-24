@@ -3,12 +3,14 @@
   class View {
 
     protected $htmlElement;
+    protected $content;
+    protected $baliseTitle;
     private $title;
-    private $baliseTitle;
 
     public function __construct() {
       $this->htmlElement = '';
       $this->title = '';
+      $this->content = null;
       $this->baliseTitle = '';
     }
 
@@ -39,6 +41,7 @@
       $this->htmlElement .= '<title>'.$this->title.'</title>';
       $this->htmlElement .= '</head><body>';
     }
+
     public function buildContentPage() {
       $this->htmlElement .= '';
     }
@@ -60,6 +63,11 @@
       }
       $this->htmlElement .= '</ul>';
       $this->htmlElement .= '</nav>';
+    }
+
+    public function initRecordViewData($content) {
+      $this->content = $content;
+      $this->baliseTitle = $this->getBaliseTitle();
     }
 
     public function buildPage() {
