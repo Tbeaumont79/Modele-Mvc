@@ -4,10 +4,28 @@
 
     protected $htmlElement;
     private $title;
+    private $baliseTitle;
 
     public function __construct() {
       $this->htmlElement = '';
       $this->title = '';
+      $this->baliseTitle = '';
+    }
+
+    public function getBaliseTitle() {
+      return $this->baliseTitle;
+    }
+
+    public function setBaliseTitle($baliseTitle) {
+      $this->baliseTitle = $baliseTitle;
+    }
+
+    public function setTitle($title) {
+      $this->title = $title;
+    }
+
+    public function getTitle() {
+      return $this->title;
     }
 
     public function getHtmlElement() {
@@ -42,10 +60,6 @@
       }
       $this->htmlElement .= '</ul>';
       $this->htmlElement .= '</nav>';
-    }
-
-    public function setTitle($title) {
-        $this->title = $title;
     }
 
     public function buildPage() {

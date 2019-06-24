@@ -5,8 +5,7 @@
     private $baliseTitle;
 
     public function __construct($content) {
-      $this->content = $content;
-      $this->baliseTitle = '';
+      $this->initRecordViewData($content);
     }
 
     public function setBaliseTitle($baliseTitle) {
@@ -18,6 +17,11 @@
       $this->htmlElement .= '<h1>'.$this->baliseTitle.'</h1>';
       $this->htmlElement .= ''.$this->content.'';
       $this->htmlElement .= '</div>';
+    }
+
+    public function initRecordViewData($content) {
+      $this->content = $content;
+      $this->baliseTitle = '';
     }
   }
  ?>

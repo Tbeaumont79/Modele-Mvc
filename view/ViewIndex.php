@@ -6,15 +6,14 @@
 
     public function __construct($content) {
       $this->initRecordViewData($content);
-      $this->$baliseTitle = '';
     }
 
     public function setBaliseTitle($baliseTitle) {
-      $this->$baliseTitle = $baliseTitle;
+      $this->baliseTitle = $baliseTitle;
     }
 
     public function buildContentPage() {
-      $this->htmlElement .= '<h1>'.$this->$baliseTitle.'</h1>';
+      $this->htmlElement .= '<h1>'.$this->baliseTitle.'</h1>';
       $this->htmlElement .= '<section>';
       $this->htmlElement .= '<div id="content">';
       $this->htmlElement .= ' '.$this->content.'';
@@ -24,6 +23,7 @@
 
     public function initRecordViewData($content) {
       $this->content = $content;
+      $this->baliseTitle = '';
     }
   }
 ?>
