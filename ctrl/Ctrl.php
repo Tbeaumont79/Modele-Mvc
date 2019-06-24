@@ -9,6 +9,9 @@
         case 'signUp':
           $ctrl = new CtrlSignUp();
           break;
+        case 'about':
+          $ctrl = new CtrlAbout();
+          break;
         default:
           $ctrl = new CtrlAccueil();
           break;

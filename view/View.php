@@ -54,7 +54,8 @@
       $menuArray = [
         'index.php?page=index' => 'Accueil',
         'index.php?page=signIn' => 'Sign In',
-        'index.php?page=signUp' => 'Sign Up'
+        'index.php?page=signUp' => 'Sign Up',
+        'index.php?page=about' => 'about'
       ];
       $this->htmlElement .= '<nav>';
       $this->htmlElement .= '<ul>';

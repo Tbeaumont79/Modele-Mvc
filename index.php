@@ -18,6 +18,8 @@
   require_once('model/statement/SqlStatementActionCheckBeforeRegister.php');
   require_once('model/statement/SqlStatementActionSignUp.php');
   require_once('ctrl/CtrlSignUp.php');
+  require_once('view/ViewAbout.php');
+  require_once('ctrl/CtrlAbout.php');
 
   $ctrl = Ctrl::chooseCtrl();
   $ctrl->start();
